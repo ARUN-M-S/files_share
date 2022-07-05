@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body style="background-color: rgb(157, 172, 240); margin-bottom: 1rem;">
+    
+    <% if (locals.fileLink != null) { %>
+        <div style="margin-bottom: 1rem;">
+          Your file is upload
+          <a style="color: white;" href="<%= locals.fileLink %>"><%= locals.fileLink %></a>
+        </div>
+      <% } %>
+      <h1 style="position: absolute; margin-left: 600px;margin-top: -100px;">File Share </h1>
+    <form
+      method="post"
+      action="/upload"
+      style="
+        display: grid;
+        gap: 0.5rem;
+        grid-template-columns: auto 1fr;
+        max-width: 500px;
+        margin: 0 auto;
+        margin-top: 350px;
+        color: white;
+      "
+      enctype="multipart/form-data"
+    >
+      <label for="file">Files</label>
+      <input id="file" name="file" type="file" required />
+      <label for="password">passwords</label>
+      <input id="password" name="password" type="password" />
+      <button
+        style="
+          grid-column: span 2;
+          height: 30px;
+          background-color: black;
+          color: white;
+          font-size: x-large;
+        "
+        type="submit"
+      >
+        Share
+      </button>
+    </form>
+  </body>
+</html>
